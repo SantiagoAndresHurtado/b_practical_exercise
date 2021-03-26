@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Beitech practical exercise!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+    <link rel="stylesheet" href="../static/css/home.css">
+</head >
+
+<body>
+    <div class="container">
+        <h1 class="banner">Beitech practical exercise!</h1>
+        <div style="width:20%" class="editor">
+            <label for="name">Name
+                <select id="name">
+                    {% for contact in contacts %}
+                    <option>{{ contact }}</option>
+                    {% endfor %}
+                </select>
+            </label>
+            <br />
+            <label for="initial">Initial Date
+                <input autocomplete=off type="date" id="initial" name="initial-date" />
+            </label>
+            <br />
+            <label for="final">Final Date
+                <input autocomplete=off type="date" id="final" name="final-date" />
+            </label>
+            <br />
+            <button type="button" onclick="load_list()">Search</button>
+            <p id="demo"></p>
+        </div>
+        <div style="width:80%" id='empTable' class="people">
+            <table>
+                <caption>Orders</caption>
+                <thead>
+                    <tr>
+                        <th>creation Date</th>
+                        <th>Order ID</th>
+                        <th>Total $</th>
+                        <th>Delivery Address</th>
+                        <th>Products</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="error">
+        </div>
+    </div>
+<script src = "../static/js/home.js" ></script>
+</body>
+</html>

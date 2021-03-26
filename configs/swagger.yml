@@ -1,0 +1,83 @@
+swagger: "2.0"
+info:
+  description: This is the enpoint information
+  version: 1.0.0
+  title: Beitech Practical Exercise!
+consumes:
+  - application/json
+produces:
+  - application/json
+
+host: localhost:2222
+basePath: /api
+
+# Paths supported by the application
+paths:
+  /create:
+    post:
+      operationId: order.create
+      tags:
+        - Create Order
+      summary: Create a new Order
+      description: Create a new Order
+      responses:
+        200:
+          description: Successful creation
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: Manny Bharma
+              email:
+                type: string
+                example: manny.bharma@beitech.co
+              delivery_address:
+                type: string
+                example: Calle falsa 1-23
+              Product A:
+                type: integer
+                example: 0
+              Product B:
+                type: integer
+                example: 1
+              Product C:
+                type: integer
+                example: 1
+              Product D:
+                type: integer
+                example: 0
+            required:
+              - name
+              - delivery_address
+              - Product A
+              - Product B
+              - Product C
+              - Product D
+
+  /list:
+    post:
+      operationId: order.list_orders
+      tags:
+        - List Order
+      summary: List orders
+      description: List orders
+      responses:
+        200:
+          description: Successful list
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: Manny Bharma
+              initial_date:
+                type: string
+                example: 2019-02-20
+              final_date:
+                type: string
+                example: 2021-04-20
+            required:
+              - name
+              - initial_date
+              - final_date
